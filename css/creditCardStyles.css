@@ -14,6 +14,11 @@ body {
     font-family: 'Space Grotesk', sans-serif;
 }
 
+.back-card{
+    text-decoration: none;
+    color: #5789d8;
+}
+
 .display-form{
     margin-top: -130px;
 }
