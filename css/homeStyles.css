@@ -52,7 +52,7 @@ body {
     .cta {
         text-decoration: none;
         padding: 15px 50px;
-        background: var(--gradient);
+        background: var(--dark-blue);
         border-radius: 50px;
         color: var(--white);
         font-weight: bold;
@@ -76,7 +76,7 @@ body {
         .select {
             width: 250px;
             padding: 20px;
-            background: var(--gradient);
+            background: var(--dark-blue);
             color: white;
         }
 
@@ -123,7 +123,6 @@ body {
 
 }
 
- /* Estilos para el modal */
  .modal-overlay {
     position: fixed;
     top: 0;
@@ -166,7 +165,7 @@ body {
 }
 
 .modal-button.confirm {
-    background: var(--gradient);
+    background: #2f93e0;
     color: white;
 }
 

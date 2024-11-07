@@ -12,5 +12,5 @@ function closeModal() {
 
 function confirmLogout() {
     closeModal();
-    window.location.href = "Login.html";
+    window.location.href = "../../pages/Login.html";
 }
