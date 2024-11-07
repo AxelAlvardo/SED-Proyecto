@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easybank Dashboard</title>
+    <link rel="stylesheet" href="/css/homeStyles.css">
+    <link rel="shortcut icon" href="../img/tarjeta-de-credito.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <figure>
+                <img src="/img/logo.svg" alt="logo" class="nav-logo">
+            </figure>
+
+            <div class="nav-links">
+                <div class="link-item select">
+                    <i class="fa-solid fa-house link-icon icon-select"></i>
+                    <a href="#" class="link link-select">Inicio</a>
+                </div>
+
+                <div class="link-item item-2">
+                    <i class="fa-solid fa-credit-card link-icon"></i>
+                    <a href="./CardPage.html" class="link">Tarjetas</a>
+                </div>
+
+                <div class="link-item item-3">
+                    <i class="fa-solid fa-user link-icon"></i>
+                    <a href="./Profile.html" class="link">Perfil</a>
+                </div>
+            </div>
+
+
+            <button class="cta" id="cta_sesion">
+                Cerrar sesión
+            </button>
+
+        </div>
+
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="modal">
+                <h3>¿Estás seguro de que quieres cerrar sesión?</h3>
+                <div class="modal-buttons">
+                    <button class="modal-button confirm" onclick="confirmLogout()">Sí</button>
+                    <button class="modal-button cancel" onclick="closeModal()">No</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-section">
+            <div class="gd-1">
+                <div class="img-1-gd">
+                    <figure>
+                        <img src="../img//cathryn-lavery-NsWcRlBT_74-unsplash.jpg" class="work-1" alt="img-1">
+                    </figure>
+
+                    <div class="img-text">
+                        <p class="t-1">Independiente y Negocios</p>
+                        <h2>Transformamos tus sueños en realidades</h2>
+                        <p>
+                            Reconocemos que eres parte del motor de la economía del país. Por eso, estamos comprometidos
+                            a trabajar junto a ti, ofreciéndote soluciones que te benefician a ti y a tu negocio de
+                            forma segura y confiable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="gd-2">
+
+                <div class="card">
+                    <figure>
+                        <img src="../img/2148006607.jpg" class="work-2" alt="img-1">
+                    </figure>
+
+                    <div class="img-text-2">
+                        <p>La mejor experiencia culinaria</p>
+                        <h2>¡Muchas felicidades a los Ganadores!</h2>
+                        <p>
+                            Ellos compraron con sus Tarjetas y ganaron para vivir una experiencia 50 Best
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="../img/82328.jpg" class="work-2" alt="img-1">
+                    </figure>
+
+                    <div class="img-text-2">
+                        <p>Canales digitales</p>
+                        <h2>Biblioteca Digital</h2>
+                        <p>
+                            Encontrarás información, contenidos, tutoriales, videos y materiales de mucho interés con funcionalidades de nuestras soluciones digitales.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <figure>
+                        <img src="../img/2149893749.jpg" class="work-2" alt="img-1">
+                    </figure>
+
+                    <div class="img-text-2">
+                        <p>Formas de pago</p>
+                        <h2>Paga con Google Pay TM</h2>
+                        <p>
+                            Ahora con Google Pay simplificas tu forma de pagar desde tu celular Android o reloj Smartwatch Wear OS.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <script src="../JS/helpers/index.js"></script>
+    <script src="https://kit.fontawesome.com/559378c360.js" crossorigin="anonymous"></script>
+    <script>
+
+    </script>
+
+</body>
+
+</html>

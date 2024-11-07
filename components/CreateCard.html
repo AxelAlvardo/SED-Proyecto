@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../css/creditCardStyles.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="../img/tarjeta-de-credito.png">
+  <title>Easybank Creacion</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section>
+    <div class="container">
+
+      <div class="card">
+        <div class="fcard">
+          <img src="../img/bg-card-front.png" class="c-front">
+          <img src="../img/card-logo.svg" id="logo" alt="">
+          <div class="c-data">
+            <p id="c-number">0000 0000 0000 0000</p>
+            <p id="c-name">Nombre del titular</p>
+          </div>
+          <div class="c-date">
+            <p id="mm-card">00</p>
+            <p id="slash">/</p>
+            <p id="yy-card">26</p>
+          </div>
+        </div>
+        <div class="backcard">
+          <img src="../img/bg-card-back.png" class="bcard" alt="">
+          <p class="cvcc">123</p>
+        </div>
+      </div>
+
+
+      <div class="display-form">
+        <form class="form">
+          <div class="card-info1">
+            <div>
+              <label for="gird1">Nombre del titular de la tarjeta
+                <input type="text" class="grid1" maxlength="50">
+                <span class="span-name"></span>
+              </label>
+
+            </div>
+
+            <div>
+              <label for="grid2">Número de tarjeta
+                <input type="text" class="grid2" maxlength="19">
+                <span class="span-number"></span>
+              </label>
+            </div>
+
+
+          </div>
+          <div class="card-info2">
+            <label for="mm">MM
+              <input type="text" class="mm" maxlength="2" style="width:5rem">
+              <span class="span-mmyy"></span>
+            </label>
+            <label for="yy">YY
+              <input type="text" class="yy" maxlength="2" style="width:5rem">
+              <span class="span-yy"></span>
+            </label>
+            <label for="cvc"> CVC
+              <input type="text" class="cvc" maxlength="3" style="width:5rem">
+              <span class="span-cvc"></span>
+            </label>
+          </div>
+          <input type="button" class="btn" value="Confirmar">
+
+          <div class="text-form">
+            <a href="./CardPage.html" class="back-card">Regresar</a>
+          </div>
+        </form>
+      </div>
+      <div class="after-form">
+        <img src="../img/icon-complete.svg" style="width:100px; margin: auto;" alt="">
+        <h1 id="h-after">GRACIAS!</h1>
+        <p id="p-after">Hemos añadido los datos de tu tarjeta.
+        <p>
+          <button id="contine">Continuar</button>
+      </div>
+
+      <script src="../JS/creditCard.js"></script>
+</body>
+
+</html>

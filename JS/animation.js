@@ -15,9 +15,6 @@ sr.reveal('.hero__copy', {
     delay: 1000
 });
 
-sr.reveal('.hero__bg', {
-    duration: 1000
-})
 
 sr.reveal('.it-1', {
     duration: 2000,
@@ -64,3 +61,10 @@ sr.reveal('.bn-4', {
     distance: '200px'
 })
 
+//LOGIN
+
+sr.reveal('.form', {
+    duration: 2500,
+    origin: 'top',
+    distance: '70px'
+})
