@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Easybank Dashboard</title>
     <link rel="stylesheet" href="/css/CardStyles.css">
     <link rel="shortcut icon" href="../img/tarjeta-de-credito.png" type="image/x-icon">
-
 </head>
+
 <body>
     <div class="main">
         <div class="nav">
@@ -20,7 +21,7 @@
                     <i class="fa-solid fa-house link-icon"></i>
                     <a href="./HomePage.html" class="link">Inicio</a>
                 </div>
-                
+
                 <div class="link-item select">
                     <i class="fa-solid fa-credit-card link-icon icon-select"></i>
                     <a href="#" class="link  link-select">Tarjetas</a>
@@ -32,33 +33,218 @@
                 </div>
             </div>
 
-
             <button class="cta" id="cta_sesion">
                 Cerrar sesión
             </button>
 
-            <div class="modal-overlay" id="modalOverlay">
+            <div class="modal-overlay" id="modalOverlayLogout">
                 <div class="modal">
                     <h3>¿Estás seguro de que quieres cerrar sesión?</h3>
                     <div class="modal-buttons">
                         <button class="modal-button confirm" onclick="confirmLogout()">Sí</button>
-                        <button class="modal-button cancel" onclick="closeModal()">No</button>
+                        <button class="modal-button cancel" onclick="closeLogoutModal()">No</button>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="main-section">
             <a href="./CreateCard.html" class="add-card-button" title="Crear Tarjeta de Crédito">
                 <i class="fa-solid fa-plus"></i>
             </a>
+
+            <div class="container">
+                <div class="card">
+                    <div class="fcard">
+                        <img src="../img/bg-card-front.png" class="c-front">
+                        <img src="../img/card-logo.svg" id="logo" alt="" class="ball">
+                        <div class="c-data">
+                            <p id="c-number">1234 5678 9012 3456</p>
+                            <p id="c-name">Nombre del titular</p>
+                            <p class="cvcc">123</p>
+                        </div>
+                        <div class="c-date">
+                            <p id="mm-card">00</p>
+                            <p id="slash">/</p>
+                            <p id="yy-card">30</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="search-container">
+                        <input type="text" id="searchInput" class="search-input" placeholder="Buscar transacciones...">
+                        <button class="transaction" onclick="openTransactionModal()">
+                            Hacer una Transacción
+                        </button>
+                    </div>
+
+                    <table id="transactionsTable">
+                        <thead>
+                            <tr>
+                                <th>ID de Transacción</th>
+                                <th>Fecha</th>
+                                <th>Detalles</th>
+                                <th>Monto</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>TX123456</td>
+                                <td>2024-11-05</td>
+                                <td class="transaction-details">Compra en Supermercado</td>
+                                <td class="amount">$120.50</td>
+                                <td><span class="status completed">Completada</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123457</td>
+                                <td>2024-11-06</td>
+                                <td class="transaction-details">Pago en línea - Netflix</td>
+                                <td class="amount">$15.99</td>
+                                <td><span class="status completed">Completada</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123458</td>
+                                <td>2024-11-07</td>
+                                <td class="transaction-details">Transferencia a cuenta de ahorros</td>
+                                <td class="amount">$200.00</td>
+                                <td><span class="status pending">Pendiente</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123459</td>
+                                <td>2024-11-07</td>
+                                <td class="transaction-details">Pago fallido en tienda</td>
+                                <td class="amount">$50.00</td>
+                                <td><span class="status failed">Fallida</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123460</td>
+                                <td>2024-11-08</td>
+                                <td class="transaction-details">Compra en Tienda Online</td>
+                                <td class="amount">$89.99</td>
+                                <td><span class="status completed">Completada</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123461</td>
+                                <td>2024-11-08</td>
+                                <td class="transaction-details">Suscripción Spotify</td>
+                                <td class="amount">$9.99</td>
+                                <td><span class="status completed">Completada</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123462</td>
+                                <td>2024-11-09</td>
+                                <td class="transaction-details">Recarga de móvil</td>
+                                <td class="amount">$20.00</td>
+                                <td><span class="status pending">Pendiente</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123463</td>
+                                <td>2024-11-10</td>
+                                <td class="transaction-details">Compra en Amazon</td>
+                                <td class="amount">$135.75</td>
+                                <td><span class="status completed">Completada</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123464</td>
+                                <td>2024-11-11</td>
+                                <td class="transaction-details">Pago en restaurante</td>
+                                <td class="amount">$45.50</td>
+                                <td><span class="status failed">Fallida</span></td>
+                            </tr>
+                            <tr>
+                                <td>TX123465</td>
+                                <td>2024-11-12</td>
+                                <td class="transaction-details">Pago de facturas</td>
+                                <td class="amount">$110.00</td>
+                                <td><span class="status pending">Pendiente</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
-    </div>
+        <!-- Modal for adding transaction -->
+        <div class="overlay-transaction" id="transactionModal" style="display: none;">
+            <div class="modal-transaction">
+                <h3 class="ti">Agregar Nueva Transacción</h3>
+                <form class="transaction-form" onsubmit="submitTransaction(event)">
+                    <div class="form-group">
+                        <label for="date">Fecha</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="details">Detalles</label>
+                        <input type="text" id="details" name="details" placeholder="Descripción de la transacción"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Monto</label>
+                        <input type="number" id="amount" name="amount" step="0.01" placeholder="$0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Estado</label>
+                        <select id="status" name="status" required>
+                            <option value="completada">Completada</option>
+                            <option value="pendiente">Pendiente</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionType">Tipo de Transacción</label>
+                        <select id="transactionType" name="transactionType" required>
+                            <option value="compra">Compra</option>
+                            <option value="transferencia">Transferencia</option>
+                            <option value="pago_en_linea">Pago en línea</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Categoría</label>
+                        <input type="text" id="category" name="category" placeholder="Ej. Supermercado, Entretenimiento"
+                            required>
+                    </div>
+                    <button type="submit" class="submit-btn">Agregar Transacción</button>
+                    <button type="button" class="transaction-btn cancel"
+                        onclick="closeTransactionModal()">Cancelar</button>
+                </form>
 
+            </div>
 
-    <script src="../JS/helpers/index.js"></script>
-    <script src="https://kit.fontawesome.com/559378c360.js" crossorigin="anonymous"></script>
-</body>
-</html>     
+            <script src="../JS/helpers/index.js"></script>
+            <script src="https://kit.fontawesome.com/559378c360.js" crossorigin="anonymous"></script>
+
+            <script>
+                function openTransactionModal() {
+                    document.getElementById('transactionModal').style.display = 'flex';
+                }
+
+                function closeTransactionModal() {
+                    document.getElementById('transactionModal').style.display = 'none';
+                }
+
+                function submitTransaction(event) {
+                    event.preventDefault();
+
+                    const date = document.getElementById('date').value;
+                    const details = document.getElementById('details').value;
+                    const amount = parseFloat(document.getElementById('amount').value);
+                    const status = document.getElementById('status').value;
+                    const transactionType = document.getElementById('transactionType').value;
+                    const category = document.getElementById('category').value;
+
+                    const transaction = {
+                        date: date,
+                        details: details,
+                        amount: amount,
+                        status: status,
+                        transactionType: transactionType,
+                        category: category
+                    };
+                    console.log("Nueva transacción:", transaction);
+                    document.querySelector('.transaction-form').reset();
+                    closeTransactionModal();
+                }
+            </script>
+
+</html>

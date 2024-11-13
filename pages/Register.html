@@ -17,7 +17,7 @@
 
         </div>
         <div class="block-2">
-            <form action="" class="form">
+            <form action="" class="form" id="formRegister">
 
                 <figure>
                     <img src="../img/logo.svg" class="img-form" alt="logo-bank">
@@ -57,13 +57,16 @@
                     <button class="btn-log-1">
                         <a href="Login.html" class="btn-link">Regresar</a>
                     </button>
-                    <input class="btn-log-2" type="submit" value="Registrar">
+                    <input class="btn-log-2" type="submit" id="submitButton" value="Registrar">
                 </div>
+
+                <p id="message" style="color: red; margin-top: 10px;"></p> 
 
             </form>
         </div>
     </div>
 
+    <script src="../JS/services/Register.js"></script>
     <script src="../JS/scrollreveal.js"></script>
     <script src="../JS/animation.js"></script>
 

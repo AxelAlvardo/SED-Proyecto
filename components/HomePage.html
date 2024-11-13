@@ -7,6 +7,12 @@
     <title>Easybank Dashboard</title>
     <link rel="stylesheet" href="/css/homeStyles.css">
     <link rel="shortcut icon" href="../img/tarjeta-de-credito.png" type="image/x-icon">
+    <script>
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = '../pages/Login.html';
+        }
+    </script>
 </head>
 
 <body>

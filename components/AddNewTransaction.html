@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easybank Dashboard</title>
+    <link rel="stylesheet" href="/css/AddTransaction.css">
+    <link rel="shortcut icon" href="../img/tarjeta-de-credito.png" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="main">
+        <div class="nav">
+            <figure>
+                <img src="/img/logo.svg" alt="logo" class="nav-logo">
+            </figure>
+
+            <div class="nav-links">
+                <div class="link-item item-2">
+                    <i class="fa-solid fa-house link-icon"></i>
+                    <a href="./HomePage.html" class="link">Inicio</a>
+                </div>
+
+                <div class="link-item select">
+                    <i class="fa-solid fa-credit-card link-icon icon-select"></i>
+                    <a href="#" class="link  link-select">Tarjetas</a>
+                </div>
+
+                <div class="link-item item-3">
+                    <i class="fa-solid fa-user link-icon"></i>
+                    <a href="./Profile.html" class="link">Perfil</a>
+                </div>
+            </div>
+
+
+            <button class="cta" id="cta_sesion">
+                Cerrar sesión
+            </button>
+
+            <div class="modal-overlay" id="modalOverlay">
+                <div class="modal">
+                    <h3>¿Estás seguro de que quieres cerrar sesión?</h3>
+                    <div class="modal-buttons">
+                        <button class="modal-button confirm" onclick="confirmLogout()">Sí</button>
+                        <button class="modal-button cancel" onclick="closeModal()">No</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="trans-section form">
+            <h1 class="ti">Realiza Una Transacción</h1>
+
+            <div class="form-cont">
+                <form class="transaction-form">
+                    <div class="form-group">
+                        <label for="date">Fecha</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="details">Detalles</label>
+                        <input type="text" id="details" name="details" placeholder="Descripción de la transacción"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Monto</label>
+                        <input type="number" id="amount" name="amount" step="0.01" placeholder="$0.00" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Estado</label>
+                        <select id="status" name="status" required>
+                            <option value="completada">Completada</option>
+                            <option value="pendiente">Pendiente</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="transactionType">Tipo de Transacción</label>
+                        <select id="transactionType" name="transactionType" required>
+                            <option value="compra">Compra</option>
+                            <option value="transferencia">Transferencia</option>
+                            <option value="pago_en_linea">Pago en línea</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Categoría</label>
+                        <input type="text" id="category" name="category" placeholder="Ej. Supermercado, Entretenimiento"
+                            required>
+                    </div>
+                    <button type="submit" class="submit-btn">Agregar Transacción</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="../JS/helpers/index.js"></script>
+    <script src="https://kit.fontawesome.com/559378c360.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

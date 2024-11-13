@@ -22,13 +22,13 @@
           <img src="../img/bg-card-front.png" class="c-front">
           <img src="../img/card-logo.svg" id="logo" alt="">
           <div class="c-data">
-            <p id="c-number">0000 0000 0000 0000</p>
+            <p id="c-number">1234 5678 9012 3456</p>
             <p id="c-name">Nombre del titular</p>
           </div>
           <div class="c-date">
             <p id="mm-card">00</p>
             <p id="slash">/</p>
-            <p id="yy-card">26</p>
+            <p id="yy-card">30</p>
           </div>
         </div>
         <div class="backcard">
@@ -37,41 +37,44 @@
         </div>
       </div>
 
-
       <div class="display-form">
         <form class="form">
           <div class="card-info1">
             <div>
               <label for="gird1">Nombre del titular de la tarjeta
-                <input type="text" class="grid1" maxlength="50">
+                <input type="text" class="grid1" maxlength="50" placeholder="Escriba su nombre...">
                 <span class="span-name"></span>
               </label>
-
             </div>
-
             <div>
-              <label for="grid2">Número de tarjeta
-                <input type="text" class="grid2" maxlength="19">
-                <span class="span-number"></span>
+              <label for="identification">Número de identificación
+                <input type="text" id="identification" maxlength="9" placeholder="Ej. 000000000-0">
+                <span class="span-identification"></span>
               </label>
             </div>
-
-
+            <div>
+              <label for="phone">Teléfono
+                <input type="text" id="phone" maxlength="8" placeholder="Ej. 1234-5678">
+                <span class="span-phone"></span>
+              </label>
+            </div>
           </div>
+
           <div class="card-info2">
             <label for="mm">MM
-              <input type="text" class="mm" maxlength="2" style="width:5rem">
+              <input type="text" class="mm" maxlength="2" style="width:5rem" value="XX" placeholder="00" disabled>
               <span class="span-mmyy"></span>
             </label>
             <label for="yy">YY
-              <input type="text" class="yy" maxlength="2" style="width:5rem">
+              <input type="text" class="yy" maxlength="2" style="width:5rem" value="XX" readonly>
               <span class="span-yy"></span>
             </label>
             <label for="cvc"> CVC
-              <input type="text" class="cvc" maxlength="3" style="width:5rem">
+              <input type="text" class="cvc" maxlength="3" style="width:5rem" value="XX" placeholder="000" disabled>
               <span class="span-cvc"></span>
             </label>
           </div>
+
           <input type="button" class="btn" value="Confirmar">
 
           <div class="text-form">
@@ -79,6 +82,7 @@
           </div>
         </form>
       </div>
+
       <div class="after-form">
         <img src="../img/icon-complete.svg" style="width:100px; margin: auto;" alt="">
         <h1 id="h-after">GRACIAS!</h1>
@@ -87,6 +91,7 @@
           <button id="contine">Continuar</button>
       </div>
 
+      <script src="../JS/services/CreateCard.js "></script>
       <script src="../JS/creditCard.js"></script>
 </body>
 
