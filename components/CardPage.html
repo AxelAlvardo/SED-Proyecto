@@ -223,7 +223,7 @@
                     document.getElementById('transactionModal').style.display = 'none';
                 }
 
-                function submitTransaction(event) {
+                async function submitTransaction(event) {
                     event.preventDefault();
 
                     const date = document.getElementById('date').value;
@@ -241,9 +241,33 @@
                         transactionType: transactionType,
                         category: category
                     };
-                    console.log("Nueva transacción:", transaction);
-                    document.querySelector('.transaction-form').reset();
-                    closeTransactionModal();
+
+                    console.log(transaction);
+                    
+
+                    try {
+                        const response = await fetch('', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(transaction)
+                        });
+
+                        if (!response.ok) {
+                            throw new Error('Error al enviar la transacción');
+                        }
+
+                        const result = await response.json();
+                        console.log("Transacción enviada exitosamente:", result);
+
+                        document.querySelector('.transaction-form').reset();
+                        closeTransactionModal();
+                        
+                    } catch (error) {
+                        console.error("Error:", error);
+                        alert("Hubo un error al enviar la transacción. Por favor intenta nuevamente.");
+                    }
                 }
             </script>
 
