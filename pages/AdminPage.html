@@ -8,6 +8,12 @@
 	<title>E banco comercial</title>
 	<!-- ======= Styles ====== -->
 	<link rel="stylesheet" href="../css/adminStyle.css">
+	<script>
+		const token = localStorage.getItem('token');
+		if (!token) {
+			window.location.href = '../pages/Login.html';
+		}
+	</script>
 </head>
 
 <body>
@@ -104,6 +110,7 @@
 								</tr>
 							</thead>
 
+							<!-- cambiar  -->
 							<tbody>
 								<tr>
 									<td>1</td>

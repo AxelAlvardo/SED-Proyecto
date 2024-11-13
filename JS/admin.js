@@ -1,4 +1,4 @@
-// add hover to selected element, si axel me redimi, me gusta el frontend
+// add hover to selected element
 let list = document.querySelectorAll(".navigation li");
 
 function activeLink() {
@@ -21,18 +21,19 @@ toggle.onclick = function () {
 };
 
 // Función para cargar contenido desde una API
-function loadContent(url, elementId) {
-	fetch(url)
-		.then(response => response.json())
-		.then(data => {
-			let content = '<h1>Clientes</h1><table class="styled-table"><thead><tr><td>ID</td><td>Usuario</td><td>Nombre Apellido</td><td>DUI</td><td>Banco</td><td>Tarjeta Digital</td><td>Número de Cuenta</td></tr></thead><tbody>';
-			data.forEach(cliente => {
-				content += `<tr><td>${cliente.id}</td><td>${cliente.usuario}</td><td>${cliente.nombre}</td><td>${cliente.dui}</td><td>${cliente.banco}</td><td>${cliente.tarjeta}</td><td>${cliente.cuenta}</td></tr>`;
-			});
-			content += '</tbody></table>';
-			document.getElementById(elementId).innerHTML = content;
-		})
-		.catch(error => console.error('Error:', error));
+async function loadContent(url, elementId) {
+	try {
+		const response = await fetch(url);
+		const data = await response.json();
+		let content = '<h1>Clientes</h1><table class="styled-table"><thead><tr><td>ID</td><td>Usuario</td><td>Nombre Apellido</td><td>DUI</td><td>Banco</td><td>Tarjeta Digital</td><td>Número de Cuenta</td></tr></thead><tbody>';
+		data.forEach(cliente => {
+			content += `<tr><td>${cliente.id}</td><td>${cliente.username}</td><td>${cliente.name}</td><td>${cliente.email}</td><td>${cliente.company.name}</td><td>${cliente.phone}</td><td>${cliente.website}</td></tr>`;
+		});
+		content += '</tbody></table>';
+		document.getElementById(elementId).innerHTML = content;
+	} catch (error) {
+		console.error('Error:', error);
+	}
 }
 
 // Cargar contenido de Clientes al iniciar la página
@@ -41,22 +42,22 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // give functionality to side bar 
-document.getElementById('clientes-link').addEventListener('click', function (event) {
-	event.preventDefault();
-	loadContent('https://api.example.com/clientes', 'content');
-});
+document.querySelectorAll('.navigation li a').forEach(link => {
+	link.addEventListener('click', function (event) {
+		event.preventDefault();
+		document.querySelectorAll('.navigation li').forEach(item => item.classList.remove('hovered'));
+		this.parentElement.classList.add('hovered');
 
-document.getElementById('tarjetas-link').addEventListener('click', function (event) {
-	event.preventDefault();
-	document.getElementById('content').innerHTML = '<h1>Tarjetas</h1><p>Contenido de Tarjetas...</p>';
-});
-
-document.getElementById('movimientos-link').addEventListener('click', function (event) {
-	event.preventDefault();
-	document.getElementById('content').innerHTML = '<h1>Movimientos</h1><p>Contenido de Movimientos...</p>';
-});
-
-document.getElementById('salir-link').addEventListener('click', function (event) {
-	event.preventDefault();
-	document.getElementById('content').innerHTML = '<h1>Salir</h1><p>Contenido de Salir...</p>';
+		if (this.id === 'clientes-link') {
+			loadContent('https://jsonplaceholder.typicode.com/users', 'content');
+		} else if (this.id === 'tarjetas-link') {
+			document.getElementById('content').innerHTML = '<h1>Tarjetas</h1><p>Contenido de Tarjetas...</p>';
+		} else if (this.id === 'movimientos-link') {
+			document.getElementById('content').innerHTML = '<h1>Movimientos</h1><p>Contenido de Movimientos...</p>';
+		} else if (this.id === 'salir-link') {
+			// remove token
+			localStorage.removeItem('token');
+			window.location.href = '../pages/Login.html';
+		}
+	});
 });
